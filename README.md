@@ -4,7 +4,7 @@ An intuitive corporate refund management application with distinct user profiles
 
 *(Portuguese version below / Versão em português abaixo)*
 
-## 🚀 Technologies Used
+## Technologies Used
 * **React + TypeScript + Vite**: Core framework and build tool.
 * **Tailwind CSS**: Utility-first CSS framework for rapid and responsive styling, utilizing a custom `@theme` configuration.
 * **React Router**: Handling client-side routing and protected routes based on simulated user roles.
