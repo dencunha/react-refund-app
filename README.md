@@ -28,7 +28,7 @@ An intuitive corporate refund management application with distinct user profiles
 
 ### 🇧🇷 Versão em Português 🇧🇷
 
-```markdown
+
 # Sistema de Gestão de Reembolsos 
 
 Uma aplicação robusta para gestão de reembolsos corporativos com perfis de acesso distintos (RBAC), controle de sessões e integração ponta a ponta com uma API REST em Node.js. Desenvolvida para digitalizar e otimizar todo o processo de envio de despesas, upload de comprovantes e auditoria gerencial.
