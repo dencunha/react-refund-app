@@ -15,7 +15,7 @@ const signUpSchema = z.object({
     .string()
     .min(6, { message: "A senha deve ter pelo menos 6 caracteres" }),
   passwordConfirm: z.string({ message: "Confirme a senha" }),
-}).refine((data) => data.password === data.passwordConfirm, {
+}).refine((data: { password: string; passwordConfirm: string }) => data.password === data.passwordConfirm, {
   message: "As senhas não são iguais",
   path: ["passwordConfirm"],
 });
@@ -44,8 +44,6 @@ export function SignUp() {
       }
     
     } catch (error) {
-      console.log(error);
-
       if (error instanceof ZodError) {
         return alert(error.issues[0].message);
       }
@@ -54,6 +52,7 @@ export function SignUp() {
         return alert(error.response?.data.message);
       }
 
+      console.log(error);
       alert("Não foi possível cadastrar");
     } finally {
       setIsLoading(false);

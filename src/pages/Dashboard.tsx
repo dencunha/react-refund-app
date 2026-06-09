@@ -15,6 +15,19 @@ import { RefundItem, type RefundItemProps } from "../components/RefundItem";
 
 const PER_PAGE = 5
 
+type RefundData = {
+  id: string;
+  name: string;
+  amount: number;
+  category: string;
+  user: { name: string };
+};
+
+type RefundsPaginationAPIResponse = {
+  refunds: RefundData[];
+  pagination: { totalPages: number };
+};
+
 export function Dashboard() {
   const [name, setName] = useState(""); 
   const [page, setPage] = useState(1);
@@ -33,7 +46,7 @@ export function Dashboard() {
           name: refund.user.name,
           description: refund.name,
           amount: formatCurrency(refund.amount),
-          categoryImg: CATEGORIES[refund.category].icon,
+          categoryImg: CATEGORIES[refund.category as keyof typeof CATEGORIES].icon,
         }))
       )
 

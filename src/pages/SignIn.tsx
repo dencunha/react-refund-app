@@ -28,8 +28,6 @@ export function SignIn() {
       const response = await api.post("/sessions", data);
       auth.save(response.data);
     } catch (error) {
-      console.log(error);
-
       if (error instanceof ZodError) {
         return { message: error.issues[0].message };
       }
@@ -38,6 +36,7 @@ export function SignIn() {
         return { message: error.response?.data.message };
       }
 
+      console.log(error);
       return { message: "Não foi possível entrar!" };
     }
   }

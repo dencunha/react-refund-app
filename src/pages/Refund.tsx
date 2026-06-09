@@ -23,6 +23,13 @@ const refundSchema = z.object({
     .positive({ message: "Informe um valor válido e superior a 0" }),
 });
 
+type RefundAPIResponse = {
+  name: string;
+  category: string;
+  amount: number;
+  filename: string;
+}
+
 export function Refund() {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
@@ -83,7 +90,7 @@ export function Refund() {
     }
   }
 
-  async function fetchRefund(id: String){
+  async function fetchRefund(id: string){
     try {
       const { data } = await api.get<RefundAPIResponse>(`/refunds/${id}`)
 
